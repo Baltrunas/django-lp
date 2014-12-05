@@ -1,0 +1,130 @@
+{% load humanize %}
+{% load i18n %}
+
+<div class='b-wrapper'>
+<div class='b-tariffs'>
+{% for tariff in tariffs %}
+	<div class='b-tariff {% if tariff.vip %}m-vip{% endif %} m-coll_{{ tariffs.count }}'>
+		<h3 class='b-tariff__title'>{{ tariff.title }}</h3>
+
+		{% if tariff.image %}
+			<img src='{{ tariff.image.url }}' alt='{{ tariff.title }}' class='b-tariff__image'>
+		{% endif %}
+
+		{% if tariff.sub_title %}
+			<big class='b-tariff__sub_title'>{{ tariff.sub_title }}</big>
+		{% endif %}
+
+		{% if tariff.description %}
+			<p class='b-tariff__description'>{{ tariff.description }}</p>
+		{% endif %}
+
+		{% if tariff.options %}
+			<ul class='b-tariff__options'>
+				{% for option in tariff.options_list %}
+					<li class='b-tariff__option'>{{ option }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		{% if tariff.old_price %}
+			<span class='b-tariff__old_price'>
+				{% if tariff.price_from %}
+					<span class='b-price_from'>{% trans "from" %}</span>
+				{% endif %}
+				<span class='b-tariff__value m-valute_{{ site.config.get.valute }}'>{{ tariff.old_price }}</span>
+				{% if tariff.price_after %}
+					<span class='b-tariff__after'>{{ tariff.price_after }}</span>
+				{% endif %}
+			</span><!-- b-tariff__old_price -->
+		{% endif %}
+
+		<span class='b-tariff__new_price'>
+			{% if tariff.price_from %}
+				<span class='b-price_from'>{% trans "from" %}</span>
+			{% endif %}
+			<span class='b-tariff__value m-valute_{{ site.config.get.valute }}'>{{ tariff.new_price }}</span>
+			{% if tariff.price_after %}
+				<span class='b-tariff__after'>{{ tariff.price_after }}</span>
+			{% endif %}
+		</span><!-- b-tariff__new_price -->
+
+		<a href="{{ tariff.get_absolute_url }}" class='green-sea-flat-button b-tariff__submit fancybox fancybox.iframe'>{% trans "Order" %}</a>
+	</div><!-- b-tariff -->
+{% endfor %}
+</div><!-- b-tariffs -->
+
+
+
+{% comment %}
+
+title
+sub_title
+old_price
+new_price
+description
+image
+order
+options
+sites
+{% endcomment %}
+
+{% comment %}
+
+<table>
+	<thead>
+		<tr>
+			<td></td>
+			{% for tariff in tariffs %}
+				{% if site in tariff.sites.all %}
+					<td>{{ tariff }}</td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+		{% for option in options %}
+			<tr>
+				<td>{{ option }}</td>
+
+				{% for tariff in tariffs %}
+					{% if site in tariff.sites.all %}
+						{% if option in tariff.options_list %}
+							<td style='color: green'>✔</td>
+						{% else %}
+							<td style='color: red'>✘</td>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+
+			</tr>
+		{% endfor %}
+
+		<tr>
+			<td>Цены</td>
+				{% for tariff in tariffs %}
+					{% if site in tariff.sites.all %}
+
+<td>
+
+		{% if tariff.old_price %}
+			<span class="b-tariff__old_price">{{ tariff.old_price }}</span>
+		{% endif %}
+
+		<span class="b-tariff__new_price">{{ tariff.new_price }}</span>
+
+		<a href="#form" class='green-sea-flat-button b-tariff__submit'>Заказать</a>
+
+</td>
+					{% endif %}
+				{% endfor %}
+		</tr>
+	</tbody>
+</table>
+
+<br>
+<br>
+<br>
+{% endcomment %}
+
+</div><!-- b-wrapper -->

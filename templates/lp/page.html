@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load render %}
+
+{% block content %}
+
+	<!-- render all blocks -->
+	{% for block_item in page.blocks.all %}
+		{% include 'lp/block.html' %}
+	{% endfor %}
+
+{% endblock %}

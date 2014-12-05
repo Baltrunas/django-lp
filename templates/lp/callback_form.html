@@ -1,0 +1,96 @@
+{% load i18n %}
+<!doctype html>
+<html lang="{{ language }}">
+<head>
+	<meta charset="UTF-8">
+	<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic'>
+	<link rel='stylesheet' href='/templates/express-page/css/order.css'>
+	<link rel='stylesheet' href='/static/css/button.css'>
+
+	<script type="text/javascript" src="/templates/express-page/js/jquery-2.0.3.min.js"></script>
+
+	<title>{{ config.title }}</title>
+</head>
+
+<body>
+<br>
+<div class='b-form'>
+	<form action='#' method='post' id='callback'>
+		{% csrf_token %}
+		{%if form.errors %}
+			<h3 class='b-form__error'>{% trans "All fields are required!" %}</h3>
+		{% endif %}
+
+		{% for field in form %}
+			{% if field.name != 'config' %}
+				<ul class='b-field-{{ field.name }} b-field-container'>
+					<li class='{% if field.field.required %}m-field-required{% endif %} b-field-label'>
+						{{ field.label }}:
+					</li>
+
+					<li class='b-field-field {% if field.errors %}b-field-field__error{% endif %}'>
+						{{ field }}
+					</li>
+
+					<li class='b-form-errors'></li>
+				</ul>
+			{% else %}
+				{{ field }}
+			{% endif %}
+		{% endfor %}
+
+		<input type='submit' class='b-form__submit orange-flat-button' value='{{ config.submit_name }}' data-url='{{ config.get_absolute_url }}' data-form='#callback' data-block='.m-header'>
+	</form>
+</div><!-- b-form -->
+
+<div class="b-tnx">
+	<span class="b-tnx__title">{% trans "Thank you!" %}</span>
+	<span class="b-tnx__text">{% trans "Your request has been sent! We will contact you soon." %}</span>
+</div>
+<br>
+
+
+<script>
+$(function() {
+
+	$(document).on('click', '.b-form__submit', function(e) {
+		$this = $(this);
+		var disabled = $this.attr('disabled');
+
+		if (disabled != 'disabled') {
+			$this.attr('disabled', 'disabled');
+			var url = $this.data('url');
+			var form = $this.data('form');
+			var form_date = $(form).serialize();
+
+			$.post(url, form_date).done(function(data) {
+				console.log(data);
+				if (data.send) {
+					$('.b-form').fadeOut();
+					$('.b-tnx').fadeIn();
+				} else {
+					for (var field in data.errors) {
+						errors_list = $(' #id_' + field).parent().next('.b-form-errors');
+						errors_list.empty();
+
+						for (var error in data.errors[field]) {
+							error_text = data.errors[field][error];
+							$('<span class="b-form-errors__error">' + error_text + '</span>').appendTo(errors_list);
+						}
+						console.log(errors_list);
+						errors_list.fadeIn(300).fadeOut(3000);
+					} // end for data.errors
+				}
+				$this.removeAttr('disabled');
+			}); // end ajax
+		} // end disable check
+
+		e.preventDefault();
+	}); // end on click
+
+});
+</script>
+
+{{ site.config.get.code_footer|safe }}
+
+</body>

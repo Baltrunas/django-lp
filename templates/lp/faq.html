@@ -1,0 +1,26 @@
+<div class="b-wrapper">
+<div class='b-faqs'>
+{% for faq in faqs %}
+	<div class="b-faq">
+		<div class="b-faq-problem">
+			<h3 class="b-faq-problem_title">{{ faq.problem_title }}</h3>
+			{% if faq.problem_description %}
+				<p class="b-faq-problem_description">{{ faq.problem_description }}</p>
+			{% endif %}
+			{% if faq.problem_image %}
+				<img src="{{ faq.problem_image.url }}" alt="{{ faq.problem_title }}" class="b-faq-problem_image">
+			{% endif %}
+		</div>
+		<div class="b-faq-solutions">
+			<h3 class="b-faq-solutions_title">{{ faq.solutions_title }}</h3>
+			{% if faq.solutions_description %}
+				<p class="b-faq-solutions_description">{{ faq.solutions_description }}</p>
+			{% endif %}
+			{% if faq.solutions_image %}
+				<img src="{{ faq.solutions_image.url }}" alt="{{ faq.problem_title }}" class="b-faq-problem_image">
+			{% endif %}
+		</div>
+	</div>
+{% endfor %}
+</div>
+</div>

@@ -1,0 +1,47 @@
+{% load i18n %}
+<div class='b-form'>
+	<form action='{{ form_config.get_absolute_url }}' method='post' id='{{ block_item.slug }}_form'>
+		{% csrf_token %}
+		<ul class="b-form-fields">
+
+		{% for field in form %}
+			<li class='b-form-field
+				{% if field.field.required %}m-field-required{% endif %}
+				{% if field.errors %}m-field-error{% endif %}
+				m-field_{{ field.name }}
+			'>
+				<ul class='b-form-field-elements'>
+					<li class='b-form-field-element__label'>
+						<label for='name'>{{ field.label }}:</label>
+					</li>
+					{% if field.help_text %}
+						<li class='b-form-field-element__help_text'>{{ field.help_text }}</li>
+					{% endif %}
+					<li class='b-form-field-element__field'>{{ field }}</li>
+					{# {% if field.errors %} #}
+					<li class='b-form-field-element__errors'>
+						<ul class='b-form-field-element__error_list'>
+							{# {% for error in field.errors %} #}
+								<li class="b-form-field-element__error_list_error">{{ error }}text</li>
+							{# {% endfor %} #}
+						</ul>
+					</li>
+					{# {% endif %} #}
+				</ul>
+			</li>
+		{% endfor %}
+		</ul>
+		<input
+			type='submit'
+			class='b-form__submit orange-flat-button'
+			value='{{ form_config.submit_name }}'
+			data-url='{{ form_config.get_absolute_url }}'
+			data-form='#{{ block_item.slug }}_form'
+		>
+	</form><!-- form -->
+
+	<div class="b-tnx">
+		<span class="b-tnx__title">{% trans "Thank you!" %}</span>
+		<span class="b-tnx__text">{% trans "Your request has been sent! We will contact you soon." %}</span>
+	</div><!-- b-tnx -->
+</div><!-- b-form -->
