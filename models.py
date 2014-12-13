@@ -112,8 +112,8 @@ class FormConfig(models.Model):
 class CountDown(models.Model):
 	name = models.CharField(verbose_name=_('Name'), max_length=128)
 	to_datetime = models.DateTimeField(verbose_name=_('To Date Time'))
-	icon = models.ImageField(verbose_name=_('Icon'), upload_to='img/countdown', blank=True)
-
+	repeat = models.PositiveIntegerField(verbose_name=_('Repeat each in hours'), default=0, blank=True, null=True)
+	img = models.ImageField(verbose_name=_('Image'), upload_to='img/countdown', default=0, blank=True, null=True)
 	public = models.BooleanField(verbose_name=_('Public'), default=True)
 	created_at = models.DateTimeField(verbose_name=_('Created At'), auto_now_add=True)
 	updated_at = models.DateTimeField(verbose_name=_('Updated At'), auto_now=True)
@@ -121,8 +121,19 @@ class CountDown(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	def is_active(self):
+		if self.to_datetime < timezone.now():
+			return True
+
+		if self.repeat:
+			self.to_datetime += datetime.timedelta(hours=self.repeat)
+			self.save()
+			return True
+
+		return False
+
 	class Meta:
-		ordering = ['updated_at', 'name']
+		ordering = ['updated_at', 'name', 'to_datetime']
 		verbose_name = _('Count Down')
 		verbose_name_plural = _('Count Downs')
 
