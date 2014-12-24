@@ -1,8 +1,7 @@
-# -*- utf-8 -*-
 from django import template
 register = template.Library()
 
-from .models import CountDown
+from ..models import CountDown
 
 
 @register.simple_tag(takes_context=True)
