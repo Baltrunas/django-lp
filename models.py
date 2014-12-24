@@ -175,7 +175,7 @@ class SiteConfig(models.Model):
 	updated_at = models.DateTimeField(verbose_name=_('Updated At'), auto_now=True)
 
 	def __unicode__(self):
-		return '%s &rarr; %s' % (self.site, self.title)
+		return u'%s &rarr; %s' % (self.site, self.title)
 	__unicode__.allow_tags = True
 
 	class Meta:
