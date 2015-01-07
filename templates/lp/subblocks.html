@@ -4,7 +4,7 @@
 <div class='b-subblocks'>
 {% for subblock in subblocks %}
 
-	<div class="b-subblock">
+	<div class="b-subblock" id='subblock_{{ subblock.id }}'>
 		{% if subblock.image %}
 			<img src="{{ subblock.image.url }}" alt="{{ subblock.title }}" class="b-subblock__image">
 		{% endif %}

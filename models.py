@@ -4,7 +4,7 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 
 from django import forms
-
+from django.utils import timezone
 
 from ..pages.models import Page
 
