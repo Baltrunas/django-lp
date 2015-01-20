@@ -7,7 +7,7 @@ import urllib2
 
 from django.http import HttpResponse
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 
 from django.template.loader import render_to_string
 from django.template import RequestContext
@@ -57,10 +57,12 @@ def request(request, id):
 			new_request.save()
 
 			try:
-				if site_config.send_sms:
+				if site_config.send_sms and site_config.sms_key:
 					text = u'Новая заявка!\n%s\n%s\n%s\n%s' % (new_request.name, new_request.phone, new_request.email, new_request.referrer)
-					sms_name = site_config.sms_name if site_config.sms_name else 'ExpressPage'
-					url = 'http://sms.ru/sms/send?api_id=128573a9-1ab5-0274-51ce-aface8c8dee1&to=%s&text=%s&from=%s&translit=0' % (urlencode(phone), urlencode(text), urlencode(sms_name))
+					if site_config.sms_name:
+						url = 'http://sms.ru/sms/send?api_id=%s&to=%s&text=%s&from=%s&translit=0' % (site_config.sms_key, urlencode(phone), urlencode(text), urlencode(site_config.sms_name))
+					else:
+						url = 'http://sms.ru/sms/send?api_id=%s&to=%s&text=%s&translit=0' % (site_config.sms_key, urlencode(phone), urlencode(text))
 					urllib2.urlopen(url)
 			except:
 				pass
@@ -89,7 +91,7 @@ def request(request, id):
 	else:
 		context['config'] = config
 		context['form'] = form
-		return render_to_response('lp/callback_form.html', context, context_instance=RequestContext(request))
+		return render(request, 'lp/callback_form.html', context)
 
 
 def tariff_order(request, id):
@@ -130,4 +132,4 @@ def tariff_order(request, id):
 
 		context['ok'] = True
 
-	return render_to_response('lp/tariff_order.html', context, context_instance=RequestContext(request))
+	return render(request, 'lp/tariff_order.html', context)

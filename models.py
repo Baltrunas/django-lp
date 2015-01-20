@@ -147,9 +147,9 @@ class SiteConfig(models.Model):
 	send_sms = models.BooleanField(verbose_name=_('Send SMS'), default=True)
 	phone = models.CharField(max_length=32, verbose_name=_('Phone'))
 
-	# sms_key = models.CharField(verbose_name=_('SMS Name'), help_text=_('From 2 to 11 Latin characters. As senders, we endorse only the names of sites, organizations or brands.'), max_length=64)
+	sms_key = models.CharField(verbose_name=_('SMS.RU Key'), max_length=64, blank=True, null=True)
 
-	sms_name = models.CharField(verbose_name=_('SMS Name'), help_text=_('From 2 to 11 Latin characters. As senders, we endorse only the names of sites, organizations or brands.'), max_length=12)
+	sms_name = models.CharField(verbose_name=_('SMS Name'), help_text=_('From 2 to 11 Latin characters. As senders, we endorse only the names of sites, organizations or brands.'), max_length=11)
 
 	send_email = models.BooleanField(verbose_name=_('Send E-Mail'), default=True)
 	email = models.EmailField(max_length=128, verbose_name=_('E-Mail'))
