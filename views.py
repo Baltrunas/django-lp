@@ -86,7 +86,7 @@ def request(request, id):
 			context['errors'] = form.errors
 			context['send'] = False
 
-		return HttpResponse(json.dumps(context), mimetype="application/json")
+		return HttpResponse(json.dumps(context), content_type="application/json")
 
 	else:
 		context['config'] = config

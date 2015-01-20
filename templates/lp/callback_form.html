@@ -3,7 +3,6 @@
 <html lang="{{ language }}">
 <head>
 	<meta charset="UTF-8">
-	<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic'>
 	<link rel='stylesheet' href='/templates/express-page/css/order.css'>
 	<link rel='stylesheet' href='/static/css/button.css'>
 
@@ -43,10 +42,7 @@
 	</form>
 </div><!-- b-form -->
 
-<div class="b-tnx">
-	<span class="b-tnx__title">{% trans "Thank you!" %}</span>
-	<span class="b-tnx__text">{% trans "Your request has been sent! We will contact you soon." %}</span>
-</div>
+<div class='b-form__tnx_message'>{{ config.tnx_message|safe }}</div>
 <br>
 
 

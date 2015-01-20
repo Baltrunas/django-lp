@@ -2,35 +2,37 @@
 <div class='b-form'>
 	<form action='{{ form_config.get_absolute_url }}' method='post' id='{{ block_item.slug }}_form'>
 		{% csrf_token %}
-		<ul class="b-form-fields">
 
-		{% for field in form %}
-			<li class='b-form-field
+		{% for field in form.hidden_fields %}
+			{{ field }}
+		{% endfor %}
+
+		<div class='b-fields'>
+
+		{% for field in form.visible_fields %}
+			<div class='b-field
 				{% if field.field.required %}m-field-required{% endif %}
 				{% if field.errors %}m-field-error{% endif %}
 				m-field_{{ field.name }}
 			'>
-				<ul class='b-form-field-elements'>
-					<li class='b-form-field-element__label'>
-						<label for='name'>{{ field.label }}:</label>
-					</li>
+				<li class='b-field__label'>
+					<label for='name'>{{ field.label }}:</label>
 					{% if field.help_text %}
-						<li class='b-form-field-element__help_text'>{{ field.help_text }}</li>
+						<span class='b-field__label_help_text'>{{ field.help_text }}</span>
 					{% endif %}
-					<li class='b-form-field-element__field'>{{ field }}</li>
 					{# {% if field.errors %} #}
-					<li class='b-form-field-element__errors'>
-						<ul class='b-form-field-element__error_list'>
+						<ul class='b-field__errors'>
 							{# {% for error in field.errors %} #}
-								<li class="b-form-field-element__error_list_error">{{ error }}text</li>
+								<li class='b-field__errors_error'>{{ error }}error text</li>
 							{# {% endfor %} #}
 						</ul>
-					</li>
 					{# {% endif %} #}
-				</ul>
-			</li>
+				</li>
+				<li class='b-field__field'>{{ field }}</li>
+			</div>
 		{% endfor %}
-		</ul>
+
+		</div>
 		<input
 			type='submit'
 			class='b-form__submit orange-flat-button'
@@ -40,8 +42,5 @@
 		>
 	</form><!-- form -->
 
-	<div class="b-tnx">
-		<span class="b-tnx__title">{% trans "Thank you!" %}</span>
-		<span class="b-tnx__text">{% trans "Your request has been sent! We will contact you soon." %}</span>
-	</div><!-- b-tnx -->
+	<div class='b-form__tnx_message'>{{ form_config.tnx_message|safe }}</div>
 </div><!-- b-form -->
