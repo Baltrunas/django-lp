@@ -52,7 +52,7 @@
 
 	<!-- tariffs -->
 	{% if block_item.public_tariffs.count %}
-		{% include "lp/tariffs.html" with tariffs=block_item.public_tariffs options=block_item.public_tariffs_options %}
+		{% include "lp/tariffs.html" with tariffs=block_item.public_tariffs options=block_item.public_tariffs_options properties=block_item.public_tariffs_properties %}
 	{% endif %}
 
 	<!-- faqs -->

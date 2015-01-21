@@ -62,12 +62,16 @@ class FAQInline(admin.StackedInline):
 	model = FAQ
 	extra = 0
 
+class TariffInline(admin.StackedInline):
+	model = Tariff
+	extra = 0
+
 class BlockAdmin(admin.ModelAdmin): 
 	list_display = ['title', 'slug', 'order', 'public']
 	search_fields = ['title', 'slug', 'order', 'public']
 	list_filter = ['public', 'pages']
 	list_editable = ['public', 'order']
-	inlines = [SubBlockInline, FAQInline]
+	inlines = [SubBlockInline, FAQInline, TariffInline]
 
 admin.site.register(Block, BlockAdmin)
 

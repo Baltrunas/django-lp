@@ -1,5 +1,6 @@
 {% load humanize %}
 {% load i18n %}
+{% load express %}
 
 <div class='b-wrapper'>
 
@@ -10,14 +11,12 @@ old_price
 new_price
 description
 image
-order
 options
-sites
 {% endcomment %}
 
 {% if 'grid' in block_item.slug %}
 
-<table class='b-tariffs-grid'>
+<table class='b-tariffs-grid' border='1'>
 	<thead>
 		<tr>
 			<td></td>
@@ -27,27 +26,39 @@ sites
 		</tr>
 	</thead>
 	<tbody>
-		{% for option in options %}
-			<tr>
-				<td>{{ option }}</td>
+		{% for property in properties %}
+			<tr class='b-tariffs_properties'>
+				<td class='b-tariffs_property__title'>{{ property }}</td>
 
 				{% for tariff in tariffs %}
-					{% if site in tariff.sites.all %}
-						{% if option in tariff.options_list %}
-							<td style='color: green'>✔</td>
-						{% else %}
-							<td style='color: red'>✘</td>
-						{% endif %}
+					{% if property in tariff.property_list %}
+						<td class='b-tariff_property__value'>{{ tariff|get_property_value:property }} </td>
+					{% else %}
+						<td class='b-tariff_property__empty_value'></td>
 					{% endif %}
 				{% endfor %}
 
 			</tr>
 		{% endfor %}
 
-		<tr>
-			<td>Цены</td>
+		{% for option in options %}
+			<tr class='b-tariffs_options'>
+				<td class='b-tariffs_option__title'>{{ option }}</td>
+
+				{% for tariff in tariffs %}
+					{% if option in tariff.options_list %}
+						<td class='b-tariff_option__yes'>✔</td>
+					{% else %}
+						<td class='b-tariff_option__no'>✘</td>
+					{% endif %}
+				{% endfor %}
+			</tr>
+		{% endfor %}
+
+		<tr class='b-tariffs_prices'>
+			<td class='b-tariffs_prices__title'>Цены</td>
 			{% for tariff in tariffs %}
-				<td>
+				<td class='b-tariffs_prices__value'>
 					{% if tariff.old_price %}
 						<span class="b-tariff__old_price">{{ tariff.old_price }}</span>
 					{% endif %}

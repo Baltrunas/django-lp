@@ -222,6 +222,13 @@ class Block(models.Model):
 				options.append(option)
 		return set(options)
 
+	def public_tariffs_properties(self):
+		properties = []
+		for tariff in self.public_tariffs():
+			for propert in tariff.property_list():
+				properties.append(propert)
+		return set(properties)
+
 	def __unicode__(self):
 		return self.title
 
@@ -332,7 +339,26 @@ class Tariff(models.Model):
 	updated_at = models.DateTimeField(verbose_name=_('Updated At'), auto_now=True)
 
 	def options_list(self):
-		return self.options.split("\n")
+		options_list = []
+		for option in self.options.split("\n"):
+			if len(option.split(": ")) < 2:
+				options_list.append(option.strip())
+		return options_list
+
+	def property_list(self):
+		property_list = []
+		for option in self.options.split("\n"):
+			property_value = option.split(": ")
+			if len(property_value) > 1:
+				property_list.append(property_value[0].strip())
+		return property_list
+
+	def get_property_value(self, propert):
+		for option in self.options.split("\n"):
+			property_value = option.split(": ")
+			if len(property_value) > 1:
+				if property_value[0].strip() == propert:
+					return property_value[1].strip()
 
 	def public_additions(self):
 		return self.additions.filter(public=True)
