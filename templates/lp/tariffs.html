@@ -5,13 +5,23 @@
 <div class='b-wrapper'>
 
 {% comment %}
+block
 title
 sub_title
 old_price
 new_price
+price_from
+price_after
 description
-image
 options
+image
+order_url
+order
+additions
+vip
+public
+created_at
+updated_at
 {% endcomment %}
 
 {% if 'grid' in block_item.slug %}
@@ -21,14 +31,14 @@ options
 		<tr>
 			<td></td>
 			{% for tariff in tariffs %}
-				<td>{{ tariff }}</td>
+				<td>{{ tariff.title }}</td>
 			{% endfor %}
 		</tr>
 	</thead>
 	<tbody>
 		{% for property in properties %}
 			<tr class='b-tariffs_properties'>
-				<td class='b-tariffs_property__title'>{{ property }}</td>
+				<td class='b-tariffs_property__title m-tariff_{{ tariff.id }} m-tariff_{{ tariff.vip }}' >{{ property }}</td>
 
 				{% for tariff in tariffs %}
 					{% if property in tariff.property_list %}
