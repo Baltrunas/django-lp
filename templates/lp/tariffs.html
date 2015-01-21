@@ -2,6 +2,66 @@
 {% load i18n %}
 
 <div class='b-wrapper'>
+
+{% comment %}
+title
+sub_title
+old_price
+new_price
+description
+image
+order
+options
+sites
+{% endcomment %}
+
+{% if 'grid' in block_item.slug %}
+
+<table class='b-tariffs-grid'>
+	<thead>
+		<tr>
+			<td></td>
+			{% for tariff in tariffs %}
+				<td>{{ tariff }}</td>
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+		{% for option in options %}
+			<tr>
+				<td>{{ option }}</td>
+
+				{% for tariff in tariffs %}
+					{% if site in tariff.sites.all %}
+						{% if option in tariff.options_list %}
+							<td style='color: green'>✔</td>
+						{% else %}
+							<td style='color: red'>✘</td>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+
+			</tr>
+		{% endfor %}
+
+		<tr>
+			<td>Цены</td>
+			{% for tariff in tariffs %}
+				<td>
+					{% if tariff.old_price %}
+						<span class="b-tariff__old_price">{{ tariff.old_price }}</span>
+					{% endif %}
+					<span class="b-tariff__new_price">{{ tariff.new_price }}</span>
+					<a href="#form" class='green-sea-flat-button b-tariff__submit'>Заказать</a>
+				</td>
+			{% endfor %}
+		</tr>
+	</tbody>
+</table>
+
+
+{% else %}
+
 <div class='b-tariffs'>
 {% for tariff in tariffs %}
 	<div class='b-tariff {% if tariff.vip %}m-vip{% endif %} m-coll_{{ tariffs.count }}'>
@@ -54,77 +114,5 @@
 {% endfor %}
 </div><!-- b-tariffs -->
 
-
-
-{% comment %}
-
-title
-sub_title
-old_price
-new_price
-description
-image
-order
-options
-sites
-{% endcomment %}
-
-{% comment %}
-
-<table>
-	<thead>
-		<tr>
-			<td></td>
-			{% for tariff in tariffs %}
-				{% if site in tariff.sites.all %}
-					<td>{{ tariff }}</td>
-				{% endif %}
-			{% endfor %}
-		</tr>
-	</thead>
-	<tbody>
-		{% for option in options %}
-			<tr>
-				<td>{{ option }}</td>
-
-				{% for tariff in tariffs %}
-					{% if site in tariff.sites.all %}
-						{% if option in tariff.options_list %}
-							<td style='color: green'>✔</td>
-						{% else %}
-							<td style='color: red'>✘</td>
-						{% endif %}
-					{% endif %}
-				{% endfor %}
-
-			</tr>
-		{% endfor %}
-
-		<tr>
-			<td>Цены</td>
-				{% for tariff in tariffs %}
-					{% if site in tariff.sites.all %}
-
-<td>
-
-		{% if tariff.old_price %}
-			<span class="b-tariff__old_price">{{ tariff.old_price }}</span>
-		{% endif %}
-
-		<span class="b-tariff__new_price">{{ tariff.new_price }}</span>
-
-		<a href="#form" class='green-sea-flat-button b-tariff__submit'>Заказать</a>
-
-</td>
-					{% endif %}
-				{% endfor %}
-		</tr>
-	</tbody>
-</table>
-
-<br>
-<br>
-<br>
-{% endcomment %}
-
+{% endif %}
 </div><!-- b-wrapper -->
