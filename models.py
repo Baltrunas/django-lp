@@ -453,6 +453,9 @@ class Office(models.Model):
 	def get_center_longitude(self):
 		return '%s' % self.center_longitude
 
+	def phones(self):
+		return [phone.strip() for phone in self.phone.split(', ')]
+
 	def __unicode__(self):
 		return self.name
 
