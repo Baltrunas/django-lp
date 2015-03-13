@@ -12,7 +12,7 @@ from .models import TariffAddition
 from .models import TariffOrder
 
 from .models import FormConfig
-# from .models import Request
+from .models import Request
 
 from .models import Office
 
@@ -33,7 +33,7 @@ class RequestAdmin(admin.ModelAdmin):
 	search_fields = ['name', 'phone', 'email', 'ip', 'referrer', 'created_at', 'updated_at']
 	list_filter = ['phone', 'email', 'ip', 'referrer', 'created_at', 'updated_at']
 
-# admin.site.register(Request, RequestAdmin)
+admin.site.register(Request, RequestAdmin)
 
 
 class CountDownAdmin(admin.ModelAdmin):

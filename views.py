@@ -20,7 +20,6 @@ from django.core.mail import EmailMultiAlternatives
 # from django.core.mail import EmailMessage
 
 
-from .forms import RequestForm
 from .forms import TariffOrderForm
 
 from .models import Office
@@ -41,8 +40,6 @@ def request(request, id):
 	site_config = SiteConfig.objects.get(site=request.site)
 	phone = site_config.phone
 
-
-	form = RequestForm(request.POST or None)
 	config = FormConfig.objects.get(id=id)
 
 	form = config.get_form(request.POST or None)
