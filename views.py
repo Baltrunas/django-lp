@@ -88,7 +88,7 @@ def request(request, id):
 	else:
 		context['config'] = config
 		context['form'] = form
-		return render(request, 'lp/callback_form.html', context)
+		return render(request, 'lp/page_form.html', context)
 
 
 def tariff_order(request, id):

@@ -40,7 +40,7 @@
 		{% endif %}
 
 		{% if block_item.form_config %}
-			{% include 'lp/request.html' with form_config=block_item.form_config form=block_item.form_config.get_form %}
+			{% include 'lp/block_form.html' with form_config=block_item.form_config form=block_item.form_config.get_form %}
 		{% endif %}
 	</div>
 
