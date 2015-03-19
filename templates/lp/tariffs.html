@@ -35,22 +35,23 @@
 				<div class='b-tariff__description'>{{ tariff.description|safe }}</div>
 			{% endif %}
 
-			{% for property in properties %}
-				{% if property in tariff.property_list %}
-					<li class='b-tariff_property__value'>{{ tariff|get_property_value:property }}</li>
-				{% else %}
-					<li class='b-tariff_property__empty_value'></li>
-				{% endif %}
-			{% endfor %}
+			<ul class='b-tariff_properties'>
+				{% for property in properties %}
+					{% if property in tariff.property_list %}
+						<li class='b-tariff_property__value'>{{ tariff|get_property_value:property }}</li>
+					{% else %}
+						<li class='b-tariff_property__empty_value'></li>
+					{% endif %}
+				{% endfor %}
 
-			{% for option in options %}
-				{% if option in tariff.options_list %}
-					<li class='b-tariff_option__yes'>✔ {{ option }}</li>
-				{% else %}
-					<li class='b-tariff_option__no'>✘ {{ option }}</li>
-				{% endif %}
-			{% endfor %}
-
+				{% for option in options %}
+					{% if option in tariff.options_list %}
+						<li class='b-tariff_option__yes'>{{ option }}</li>
+					{% else %}
+						<li class='b-tariff_option__no'>{{ option }}</li>
+					{% endif %}
+				{% endfor %}
+			</div>
 			{% comment %}
 			additions
 				name
