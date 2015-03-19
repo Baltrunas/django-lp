@@ -91,7 +91,7 @@ def request(request, id):
 		return render(request, 'lp/page_form.html', context)
 
 
-def tariff_order(request, id):
+def tariff(request, id):
 	context = {}
 
 	tariff = Tariff.objects.get(id=id)

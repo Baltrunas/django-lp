@@ -366,7 +366,7 @@ class Tariff(models.Model):
 
 	@models.permalink
 	def url(self):
-		return ('tariff_order', (), {'id': self.id})
+		return ('tariff', (), {'id': self.id})
 
 	def get_absolute_url(self):
 		if self.order_url:
