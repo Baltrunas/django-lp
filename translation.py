@@ -9,6 +9,8 @@ from .models import FormConfig
 from .models import Block
 from .models import SubBlock
 # from .models import FAQ
+from .models import TariffAddition
+from .models import Tariff
 from .models import Office
 
 
@@ -41,20 +43,16 @@ translator.register(SubBlock, SubBlockTranslationOptions)
 
 # translator.register(FAQ, FAQTranslationOptions)
 
+class TariffAdditionTranslationOptions(TranslationOptions):
+	fields = ['name', 'description', 'price']
 
-# TariffAddition
-# name
-# description
-# price
+translator.register(TariffAddition, TariffAdditionTranslationOptions)
 
 
-# Tariff
-# title
-# sub_title
-# old_price
-# new_price
-# description
-# options
+class TariffTranslationOptions(TranslationOptions):
+	fields = ['title', 'sub_title', 'price_after', 'description', 'options']
+
+translator.register(Tariff, TariffTranslationOptions)
 
 
 class OfficeTranslationOptions(TranslationOptions):
