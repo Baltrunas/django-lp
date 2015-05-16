@@ -65,9 +65,13 @@ function init () {
 			<span itemprop='name'>{{ offices.0 }}</span>
 			<span itemprop='url'>https://express-page.kg/</span>
 
-			<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-				<meta itemprop="latitude" content="{{ offices.0.get_latitude }}">
-				<meta itemprop="longitude" content="{{ offices.0.get_longitude }}">
+			<div itemprop="location">
+				<div itemprop="geo" itemscope itemtype="https://schema.org/Place">
+					<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+						<meta itemprop="latitude" content="{{ offices.0.get_latitude }}">
+						<meta itemprop="longitude" content="{{ offices.0.get_longitude }}">
+					</div>
+				</div>
 			</div>
 
 
