@@ -60,14 +60,17 @@ function init () {
 
 	<div id='contacts-map' style='width:100%; height:450px'></div>
 	<div class='b-wrapper'>
-		<div class='b-contacts-info' itemscope itemtype="http://schema.org/LocalBusiness">
+		<div class='b-contacts-info' itemscope itemtype="http://schema.org/Organization">
 			<h3>Наши контакты</h3>
+			<span itemprop="name">{{ office }}</span>
+			<span itemprop="url">https://express-page.kg/</span>
+
 			<span class='m-phone' itemprop="telephone">{{ offices.0.phone|safe }}</span><br>
 			{% if offices.0.skype %}
 				<span class='m-skype'>{{ offices.0.skype }}</span><br>
 			{% endif %}
 			{% if offices.0.email %}
-				<span class='m-email' itemprop="email">{{ offices.0.email }}</span><br>
+				<span class='m-email' itemprop='email'>{{ offices.0.email }}</span><br>
 			{% endif %}
 			{% if offices.0.address %}
 				<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
