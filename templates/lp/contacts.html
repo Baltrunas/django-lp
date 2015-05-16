@@ -62,8 +62,14 @@ function init () {
 	<div class='b-wrapper'>
 		<div class='b-contacts-info' itemscope itemtype="http://schema.org/Organization">
 			<h3>Наши контакты</h3>
-			<span itemprop="name">{{ office }}</span>
-			<span itemprop="url">https://express-page.kg/</span>
+			<span itemprop='name'>{{ offices.0 }}</span>
+			<span itemprop='url'>https://express-page.kg/</span>
+
+			<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+				<meta itemprop="latitude" content="{{ offices.0.get_latitude }}">
+				<meta itemprop="longitude" content="{{ offices.0.get_longitude }}">
+			</div>
+
 
 			<span class='m-phone' itemprop="telephone">{{ offices.0.phone|safe }}</span><br>
 			{% if offices.0.skype %}
