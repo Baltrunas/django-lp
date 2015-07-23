@@ -1,7 +1,7 @@
 {% load i18n %}
 <div class='b-form'>
 	{% if form_config.show_title %}
-		<h3 class='b-form__title'>{{ form_config.name }}</h3>
+		<h3 class='b-form__title'>{{ form_config.title }}</h3>
 	{% endif %}
 	<form action='{{ form_config.get_absolute_url }}' method='post' id='{{ block_item.slug }}_form'>
 		{% csrf_token %}
