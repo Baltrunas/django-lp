@@ -19,7 +19,7 @@ class Request(models.Model):
 	email = models.EmailField(max_length=128, verbose_name=_('E-Mail'), blank=True, null=True)
 	comment = models.TextField(verbose_name=_('Comment'), blank=True, null=True)
 
-	ip = models.IPAddressField(blank=True, null=True, editable=False, verbose_name=_('IP'))
+	ip = models.GenericIPAddressField(blank=True, null=True, editable=False, verbose_name=_('IP'))
 	referrer = models.CharField(verbose_name=_('Referrer'), max_length=2048, blank=True, null=True, editable=False)
 
 	created_at = models.DateTimeField(verbose_name=_('Created At'), auto_now_add=True)
@@ -390,7 +390,7 @@ class TariffOrder(models.Model):
 	phone = models.CharField(max_length=32, verbose_name=_('Phone'), help_text=_('+7 (965) 222-03-30'))
 	email = models.EmailField(max_length=128, verbose_name=_('E-Mail'), help_text=_('gleb@gmail.com'))
 
-	ip = models.IPAddressField(blank=True, null=True, editable=False, verbose_name=_('IP'))
+	ip = models.GenericIPAddressField(blank=True, null=True, editable=False, verbose_name=_('IP'))
 	referrer = models.CharField(verbose_name=_('Referrer'), max_length=2048, blank=True, null=True, editable=False)
 
 	tariff = models.ForeignKey(Tariff, verbose_name=_('Tariff'), null=True)
