@@ -195,7 +195,7 @@ class Block(models.Model):
 
 	# template = models.CharField(_('Template'), max_length=124, blank=True, null=True)
 
-	pages = models.ManyToManyField(Page, related_name='blocks', verbose_name=_('Sites'), null=True, blank=True)
+	pages = models.ManyToManyField(Page, related_name='blocks', verbose_name=_('Sites'), blank=True)
 	order = models.PositiveSmallIntegerField(verbose_name=_('Sort'), default=500)
 
 	form_config = models.ForeignKey(FormConfig, verbose_name=_('Form Config'), blank=True, null=True)
@@ -332,7 +332,7 @@ class Tariff(models.Model):
 
 	order = models.PositiveSmallIntegerField(verbose_name=_('Sort'), default=500)
 
-	additions = models.ManyToManyField(TariffAddition, verbose_name=_('Additions'), null=True, blank=True, related_name='tariff')
+	additions = models.ManyToManyField(TariffAddition, verbose_name=_('Additions'), blank=True, related_name='tariff')
 
 	vip = models.BooleanField(verbose_name=_('VIP'), default=True)
 	public = models.BooleanField(verbose_name=_('Public'), default=True)
@@ -394,7 +394,7 @@ class TariffOrder(models.Model):
 	referrer = models.CharField(verbose_name=_('Referrer'), max_length=2048, blank=True, null=True, editable=False)
 
 	tariff = models.ForeignKey(Tariff, verbose_name=_('Tariff'), null=True)
-	additions = models.ManyToManyField(TariffAddition, verbose_name=_('Additions'), null=True, blank=True)
+	additions = models.ManyToManyField(TariffAddition, verbose_name=_('Additions'), blank=True)
 
 	total_price = models.PositiveIntegerField(verbose_name=_('Total Price'), null=True, blank=True)
 
