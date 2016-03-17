@@ -1,67 +1,45 @@
 {% load render %}
 
-
-{% if block_item.bg %}
-
-<style type="text/css">
-	.m-{{ block_item.slug }} {
-		background-image: url({{ block_item.bg.url }})!important;
-	}
-</style>
-
-{% endif %}
-
-<section class='b-block m-{{ block_item.slug }}' id='{{ block_item.slug }}' data-id='{{ block_item.id }}'>
-	<div class='b-wrapper'>
-		<div class='b-block-content {% if block_item.image %}m-with_image{% else %}m-no_image{% endif %}'>
-
+<section class='
+	b-block m-block__{{ block_item.slug }}
+	m-block__{{ block_item.id }}
+	{% if block_item.image %}m-block__with_image{% else %}m-block__without_image{% endif %}
+	'
+	{% if block_item.bg %}style='background-image: url({{ block_item.bg.url }})'{% endif %}
+	id='{{ block_item.slug }}'
+	data-id='{{ block_item.id }}'
+>
+	<div class='b-block__info'>
 			{% if not block_item.hide_title %}
 				{% if forloop.first %}
-					<h1 class='b-block-content__title'>{{ block_item.title|safe }}</h1>
+					<h1 class='b-block__title'>{{ block_item.title|safe }}</h1>
 				{% else %}
-					<h2 class='b-block-content__title'>{{ block_item.title|safe }}</h2>
+					<h2 class='b-block__title'>{{ block_item.title|safe }}</h2>
 				{% endif %}
 			{% endif %}
 
 			{% if block_item.sub_title %}
-				<h3 class='b-block-content__subtitle'>{{ block_item.sub_title|safe }}</h3>
+				<h3 class='b-block__subtitle'>{{ block_item.sub_title|safe }}</h3>
 			{% endif %}
 
 			{% if block_item.text %}
-			<div class='b-block-content__description'>
+			<div class='b-block__description'>
 				{% render block_item.text %}
 			</div>
 			{% endif %}
 		</div>
 		{% if block_item.image %}
-			<div class='b-block-img'>
-				<img src='{{ block_item.image.url }}' alt='{{ block_item.title }}' class='b-block-img__img'>
-			</div>
-		{% endif %}
-
-		{% if block_item.form_config %}
-			{% include 'lp/block_form.html' with form_config=block_item.form_config form=block_item.form_config.get_form %}
+			<img class='b-block__image' src='{{ block_item.image.url }}' alt='{{ block_item.title }}'>
 		{% endif %}
 	</div>
-
 
 	<!-- subblocks -->
 	{% if block_item.public_subblocks.count %}
 		{% include "lp/subblocks.html" with subblocks=block_item.public_subblocks %}
 	{% endif %}
 
-	<!-- tariffs -->
-	{% if block_item.public_tariffs.count %}
-		{% include "lp/tariffs.html" with tariffs=block_item.public_tariffs options=block_item.public_tariffs_options properties=block_item.public_tariffs_properties %}
-	{% endif %}
-
 	<!-- faqs -->
 	{% if block_item.faqs.count %}
 		{% include "lp/faq.html" with faqs=block_item.faqs.all %}
-	{% endif %}
-
-	<!-- offices & contacts -->
-	{% if block_item.offices %}
-		{% include "contacts/block.html" %}
 	{% endif %}
 </section><!-- b-block --><!-- m-{{ block_item.slug }} -->

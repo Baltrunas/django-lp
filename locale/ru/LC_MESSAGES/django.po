@@ -1,644 +1,106 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 12:01+0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"PO-Revision-Date: 2016-03-17 08:39+0000\n"
+"Last-Translator:   <info@express-page.ru>\n"
+"X-Translated-Using: django-rosetta 0.7.9\n"
 
-#: forms.py:24 models.py:13 models.py:79 models.py:110 models.py:170
-#: models.py:303 models.py:374 models.py:400 models.py:452 models.py:478
-#: models.py:509 models.py:530 models.py:558 models.py:580
-#: templates/email/tariff_order.html:15
-msgid "Name"
-msgstr "Имя"
-
-#: forms.py:25 models.py:14 models.py:61 models.py:134 models.py:375
-#: models.py:405 models.py:484 templates/email/tariff_order.html:19
-msgid "Phone"
-msgstr "Телефон"
-
-#: forms.py:26 models.py:15 models.py:67 models.py:138 models.py:376
-#: templates/email/tariff_order.html:23
-msgid "E-Mail"
-msgstr "E-Mail"
-
-#: forms.py:26
-msgid "info@express-page.ru"
-msgstr ""
-
-#: forms.py:47 forms.py:50
-msgid "Domain Already Exists"
-msgstr "Домен уже существует"
-
-#: models.py:10 models.py:105 models.py:214
-msgid "Form Config"
-msgstr "Настройки формы"
-
-#: models.py:11 models.py:129 models.py:372
-msgid "Site"
-msgstr "Сайт"
-
-#: models.py:16 models.py:73
-msgid "Comment"
-msgstr "Коментарий"
-
-#: models.py:18 models.py:378
-msgid "IP"
-msgstr ""
-
-#: models.py:19 models.py:379
-msgid "Referrer"
-msgstr "Источник перехода"
-
-#: models.py:21 models.py:51 models.py:115 models.py:157 models.py:185
-#: models.py:220 models.py:263 models.py:290 models.py:314 models.py:349
-#: models.py:386 models.py:427 models.py:464 models.py:495 models.py:517
-#: models.py:545 models.py:562 models.py:594
-msgid "Created At"
-msgstr "Созданно"
-
-#: models.py:22 models.py:52 models.py:116 models.py:158 models.py:186
-#: models.py:221 models.py:264 models.py:291 models.py:315 models.py:350
-#: models.py:387 models.py:428 models.py:465 models.py:496 models.py:518
-#: models.py:546 models.py:563 models.py:595
-msgid "Updated At"
-msgstr "Обновленно"
-
-#: models.py:29
-msgid "Msg"
-msgstr "Сообщение"
-
-#: models.py:30
-msgid "Msgs"
-msgstr "Сообщения"
-
-#: models.py:34 models.py:131 models.py:198 models.py:253 models.py:329
+#: models.py:8 models.py:40
 msgid "Title"
 msgstr "Заголовок"
 
-#: models.py:35
-msgid "Show form title"
-msgstr "Показывать заголовок формы"
-
-#: models.py:36
-msgid "Submit bottom name"
-msgstr "Название кнопки отправить"
-
-#: models.py:38
-msgid "Show phone field"
-msgstr "Показывать поле телефон"
-
-#: models.py:39
-msgid "Phone placeholder"
-msgstr "Шаблон телефона"
-
-#: models.py:41
-msgid "Show e-mail field"
-msgstr "Показывать поле E-Mail"
-
-#: models.py:42
-msgid "E-Mail placeholder"
-msgstr "Шаблон E-Mail"
-
-#: models.py:44
-msgid "Show comment field"
-msgstr "Показывать поле комментарий"
-
-#: models.py:45
-msgid "Comment placeholder"
-msgstr "Шаблон комментария"
-
-#: models.py:47
-msgid "Error Message"
-msgstr "Сообщение об ощибке"
-
-#: models.py:48
-msgid "Tnx Message"
-msgstr "Сообщение о успешной отправке формы"
-
-#: models.py:50 models.py:114 models.py:156 models.py:184 models.py:219
-#: models.py:262 models.py:289 models.py:313 models.py:348 models.py:426
-#: models.py:463 models.py:494 models.py:516 models.py:544 models.py:561
-#: models.py:593
-msgid "Public"
-msgstr "Публикация"
-
-#: models.py:106
-msgid "Forms Configs"
-msgstr "Настройки форм"
-
-#: models.py:111
-msgid "To Date Time"
-msgstr "До времени"
-
-#: models.py:123
-msgid "Count Down"
-msgstr "Обратные отсчет"
-
-#: models.py:124
-msgid "Count Downs"
-msgstr "Обратные отсчет"
-
-#: models.py:133
-msgid "Send SMS"
-msgstr "Отправлять SMS"
-
-#: models.py:135
-msgid "SMS Name"
-msgstr "SMS Отправитель"
-
-#: models.py:135
-msgid ""
-"From 2 to 11 Latin characters. As senders, we endorse only the names of "
-"sites, organizations or brands."
-msgstr ""
-"От 2 до 11 латинских символов. В качестве отправителей мы одобряем только "
-"названия сайтов, организаций или торговых марок."
-
-#: models.py:137
-msgid "Send E-Mail"
-msgstr "Отплавлять E-Mail"
-
-#: models.py:140
-msgid "Head Code"
-msgstr ""
-
-#: models.py:141
-msgid "Footer Code"
-msgstr ""
-
-#: models.py:143
-msgid "Pop-Up Form (CallBack)"
-msgstr "Всплывающяя форма (Заказать звонок)"
-
-#: models.py:150
-msgid "Valute"
-msgstr "Валюта"
-
-#: models.py:152
-msgid "Favicon"
-msgstr ""
-
-#: models.py:153 models.py:455
-msgid "Logo"
-msgstr ""
-
-#: models.py:154
-msgid "Logo Small"
-msgstr ""
-
-#: models.py:165
-msgid "Site Config"
-msgstr "Настройки сайта"
-
-#: models.py:166
-msgid "Sites Config"
-msgstr "Настройки сайтов"
-
-#: models.py:171 models.py:211 models.py:259 models.py:286 models.py:414
-#: models.py:461 models.py:491 models.py:515 models.py:542 models.py:560
-#: models.py:591 templates/manager/site_list.html:3
-msgid "Sites"
-msgstr "Сайты"
-
-#: models.py:173
-msgid "URL"
-msgstr ""
-
-#: models.py:176
-msgid "Header"
-msgstr ""
-
-#: models.py:177
-msgid "Aside"
-msgstr ""
-
-#: models.py:178
-msgid "Footer"
-msgstr ""
-
-#: models.py:180
-msgid "Group"
-msgstr "Группа"
-
-#: models.py:181 models.py:212 models.py:260 models.py:287 models.py:311
-#: models.py:343 models.py:423 models.py:459 models.py:493 models.py:513
-#: models.py:541 models.py:559 models.py:590
-msgid "Sort"
-msgstr ""
-
-#: models.py:182 models.py:583
-msgid "Icon"
-msgstr "Иконка"
-
-#: models.py:193
-msgid "Menu Item"
-msgstr "Пункт меню"
-
-#: models.py:194
-msgid "Menu Items"
-msgstr "Пункты меню"
-
-#: models.py:199
+#: models.py:9
 msgid "Hide Title"
-msgstr "Скрыть заголовок"
+msgstr "Скрывать заголовок"
 
-#: models.py:200
+#: models.py:10
 msgid "Slug"
 msgstr "Ярлык"
 
-#: models.py:201 models.py:255 models.py:330
+#: models.py:11 models.py:42
 msgid "Sub Title"
 msgstr "Подзаголовок"
 
-#: models.py:202 models.py:511
+#: models.py:12
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:203 models.py:257 models.py:341 models.py:538 models.py:584
+#: models.py:13 models.py:44
 msgid "Image"
 msgstr "Изображение"
 
-#: models.py:204
+#: models.py:14
 msgid "Background"
 msgstr "Фоновое изображение"
 
-#: models.py:248 models.py:254 models.py:276 models.py:327 models.py:453
-#: models.py:508 models.py:578
+#: models.py:18
+msgid "Pages"
+msgstr "Страници"
+
+#: models.py:19 models.py:46 models.py:72
+msgid "Sort ordering"
+msgstr "Порядок сортировки"
+
+#: models.py:22 models.py:48 models.py:74
+msgid "Public"
+msgstr "Публикация"
+
+#: models.py:23 models.py:49 models.py:75
+msgid "Created At"
+msgstr "Создано"
+
+#: models.py:24 models.py:50 models.py:76
+msgid "Updated At"
+msgstr "Обновлено"
+
+#: models.py:35 models.py:41 models.py:62
 msgid "Block"
 msgstr "Блок"
 
-#: models.py:249
+#: models.py:36
 msgid "Blocks"
 msgstr "Блоки"
 
-#: models.py:256 models.py:304 models.py:338 models.py:402 models.py:456
-#: models.py:483 models.py:539 models.py:585 templates/lp/projects.html:21
+#: models.py:43
 msgid "Description"
 msgstr "Описание"
 
-#: models.py:271
+#: models.py:57
 msgid "Sub Block"
-msgstr "Под блок"
+msgstr "Подблок"
 
-#: models.py:272
+#: models.py:58
 msgid "Sub Blocks"
-msgstr "Под блоки"
+msgstr "Подблоки"
 
-#: models.py:278
+#: models.py:64
 msgid "Problem Title"
 msgstr "Заголовок проблемы"
 
-#: models.py:279
+#: models.py:65
 msgid "Problem Description"
 msgstr "Описание проблемы"
 
-#: models.py:280
+#: models.py:66
 msgid "Problem Image"
 msgstr "Изображение проблемы"
 
-#: models.py:282
+#: models.py:68
 msgid "Solutions Title"
 msgstr "Заголовок решения"
 
-#: models.py:283
+#: models.py:69
 msgid "Solutions Description"
 msgstr "Описание решения"
 
-#: models.py:284
+#: models.py:70
 msgid "Solutions Image"
 msgstr "Изображение решения"
 
-#: models.py:298
+#: models.py:83
 msgid "FAQ"
-msgstr "Проблема и решение"
+msgstr "Вопрос и ответ"
 
-#: models.py:299
+#: models.py:84
 msgid "FAQs"
-msgstr "Проблемы и решения"
-
-#: models.py:305 templates/email/tariff_order.html:31
-msgid "Price"
-msgstr "Цена"
-
-#: models.py:307 models.py:335
-msgid "Price From"
-msgstr "Цена от"
-
-#: models.py:308 models.py:336
-msgid "Price After"
-msgstr "После цены"
-
-#: models.py:310
-msgid "Selected"
-msgstr "Выбранно"
-
-#: models.py:322
-msgid "Tariff Addition"
-msgstr "Тарифное дополнение"
-
-#: models.py:323
-msgid "Tariffs Additions"
-msgstr "Тарифные дополнения"
-
-#: models.py:332
-msgid "Old Price"
-msgstr "Старая цена"
-
-#: models.py:333
-msgid "New Price"
-msgstr "Новая цена"
-
-#: models.py:339
-msgid "Options"
-msgstr "Опции"
-
-#: models.py:345 models.py:382 templates/email/tariff_order.html:37
-msgid "Additions"
-msgstr "Дополнения"
-
-#: models.py:347
-msgid "VIP"
-msgstr ""
-
-#: models.py:367 models.py:381 templates/email/tariff_order.html:27
-msgid "Tariff"
-msgstr "Тариф"
-
-#: models.py:368
-msgid "Tariffs"
-msgstr "Тарифы"
-
-#: models.py:374
-msgid "Gleb"
-msgstr "Глеб"
-
-#: models.py:375
-msgid "+7 (965) 222-03-30"
-msgstr ""
-
-#: models.py:376
-msgid "gleb@gmail.com"
-msgstr ""
-
-#: models.py:384 templates/email/tariff_order.html:51
-msgid "Total Price"
-msgstr "Общая цена"
-
-#: models.py:394
-msgid "Tariff Order"
-msgstr "Заказ тарифа"
-
-#: models.py:395
-msgid "Tariff Orders"
-msgstr "Заказы тарифов"
-
-#: models.py:403
-msgid "Organization Data"
-msgstr "Данные организации"
-
-#: models.py:406 models.py:486
-msgid "E-mail"
-msgstr ""
-
-#: models.py:407
-msgid "Skype"
-msgstr ""
-
-#: models.py:408
-msgid "Address"
-msgstr "Адрес"
-
-#: models.py:410 models.py:457 models.py:488
-msgid "WWW"
-msgstr ""
-
-#: models.py:412 models.py:479
-msgid "Photo"
-msgstr "Фото"
-
-#: models.py:416
-msgid "Latitude"
-msgstr "Широта"
-
-#: models.py:417
-msgid "Longitude"
-msgstr "Долгота"
-
-#: models.py:419
-msgid "Center Latitude"
-msgstr "Широта центра"
-
-#: models.py:420
-msgid "Center Longitude"
-msgstr "Долгота центра"
-
-#: models.py:422
-msgid "Zoom"
-msgstr "Увеличения"
-
-#: models.py:424 models.py:462 models.py:592
-msgid "Main"
-msgstr "На главной"
-
-#: models.py:472 models.py:481 models.py:537
-msgid "Organization"
-msgstr "Организация"
-
-#: models.py:473
-msgid "Organizations"
-msgstr "Организации"
-
-#: models.py:482
-msgid "Position"
-msgstr "Позиция"
-
-#: models.py:489
-msgid "Social"
-msgstr "Социальная сеть"
-
-#: models.py:490
-msgid "Staff"
-msgstr "Персонал"
-
-#: models.py:503 models.py:510
-msgid "Member"
-msgstr "Участник"
-
-#: models.py:504
-msgid "Members"
-msgstr "Участники"
-
-#: models.py:512 models.py:587 templates/lp/projects.html:29
-msgid "Result"
-msgstr "Результат"
-
-#: models.py:525
-msgid "Review"
-msgstr "Отзыв"
-
-#: models.py:526
-msgid "Reviews"
-msgstr "Отзывы"
-
-#: models.py:532
-msgid "Thank You Letter"
-msgstr "Благодарственное письмо"
-
-#: models.py:533
-msgid "Certificate"
-msgstr "Сертификат"
-
-#: models.py:534
-msgid "Hramota"
-msgstr "Грамота"
-
-#: models.py:536
-msgid "Role"
-msgstr "Роль"
-
-#: models.py:553
-msgid "Document"
-msgstr "Документ"
-
-#: models.py:554
-msgid "Documents"
-msgstr "Документы"
-
-#: models.py:573
-msgid "Project Category"
-msgstr "Категория проекта"
-
-#: models.py:574
-msgid "Project Categories"
-msgstr "Категории проектов"
-
-#: models.py:581
-msgid "Category"
-msgstr "Категория"
-
-#: models.py:582
-msgid "Client"
-msgstr "Клиент"
-
-#: models.py:586 templates/lp/projects.html:25
-msgid "Target"
-msgstr "Цель"
-
-#: models.py:588
-msgid "Result URL"
-msgstr "URL результата"
-
-#: models.py:602
-msgid "Project"
-msgstr "Проект"
-
-#: models.py:603
-msgid "Projects"
-msgstr "Проекты"
-
-#: templates/email/tariff_order.html:9
-msgid "Hello"
-msgstr "Здравствуйте"
-
-#: templates/lp/_callback.html:34 templates/lp/message.html:36
-msgid "Send request!"
-msgstr "Отправить заявку!"
-
-#: templates/lp/callback_form.html:21 templates/lp/tariff_order.html:35
-msgid "All fields are required!"
-msgstr "Все поля обязательны для заполнения!"
-
-#: templates/lp/callback_form.html:47 templates/lp/request.html:44
-#: templates/lp/tariff_order.html:15
-msgid "Thank you!"
-msgstr "Спасибо!"
-
-#: templates/lp/callback_form.html:48 templates/lp/request.html:45
-#: templates/lp/tariff_order.html:17
-msgid "Your request has been sent! We will contact you soon."
-msgstr "Заявка отправлена. Мы свяжемся с Вами в ближайшее время!"
-
-#: templates/lp/countdown.html:9
-msgid "days"
-msgstr "дней"
-
-#: templates/lp/countdown.html:16
-msgid "hours"
-msgstr "часов"
-
-#: templates/lp/countdown.html:23
-msgid "minutes"
-msgstr "минут"
-
-#: templates/lp/countdown.html:30
-msgid "seconds"
-msgstr "секунд"
-
-#: templates/lp/tariff_order.html:9 templates/lp/tariff_order.html.py:30
-#: templates/lp/tariff_order.html:75 templates/lp/tariffs.html:52
-msgid "Order"
-msgstr "Заказать"
-
-#: templates/lp/tariff_order.html:19
-msgid "You can also contact us:"
-msgstr "Вы также можете связаться с нами:"
-
-#: templates/lp/tariff_order.html:27
-msgid "Close"
-msgstr "Закрыть"
-
-#: templates/lp/tariff_order.html:60 templates/lp/tariff_order.html.py:70
-#: templates/lp/tariffs.html:33 templates/lp/tariffs.html.py:44
-msgid "from"
-msgstr "от"
-
-#: templates/lp/tariff_order.html:68
-msgid "Total"
-msgstr "Итого"
-
-#: templates/manager/footer.html:4
-msgid "All rights reserved"
-msgstr "Все права защищены"
-
-#: templates/manager/header.html:21
-msgid "Home"
-msgstr "На главную"
-
-#: templates/manager/header.html:26
-msgid "Log Out"
-msgstr "Выход"
-
-#: templates/manager/login.html:6 templates/manager/login.html.py:18
-msgid "Log in"
-msgstr "Вход"
-
-#: templates/manager/object_edit.html:48 templates/manager/site_edit.html:52
-msgid "Save and continue editing"
-msgstr ""
-
-#: templates/manager/object_edit.html:50 templates/manager/site_edit.html:54
-msgid "Save"
-msgstr "Сохранить"
-
-#: templates/manager/object_list.html:8 templates/manager/site_list.html:7
-msgid "Add"
-msgstr "Добавить"
-
-#: templates/manager/object_list.html:34 templates/manager/site_list.html:30
-msgid "Delete"
-msgstr "Удалить"
+msgstr "Вопросы и ответы"
