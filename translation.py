@@ -11,7 +11,6 @@ from .models import SubBlock
 # from .models import FAQ
 from .models import TariffAddition
 from .models import Tariff
-from .models import Office
 
 
 class FormConfigTranslationOptions(TranslationOptions):
@@ -54,11 +53,6 @@ class TariffTranslationOptions(TranslationOptions):
 
 translator.register(Tariff, TariffTranslationOptions)
 
-
-class OfficeTranslationOptions(TranslationOptions):
-	fields = ['name', 'description', 'orgdata', 'address', 'www']
-
-translator.register(Office, OfficeTranslationOptions)
 
 
 # Organization

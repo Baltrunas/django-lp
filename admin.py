@@ -14,9 +14,6 @@ from .models import TariffOrder
 from .models import FormConfig
 from .models import Request
 
-from .models import Office
-
-
 from .models import CountDown
 
 
@@ -118,12 +115,3 @@ class TariffOrderAdmin(admin.ModelAdmin):
 	list_filter = ['name', 'phone', 'email', 'total_price', 'ip']
 
 admin.site.register(TariffOrder, TariffOrderAdmin)
-
-
-class OfficeAdmin(admin.ModelAdmin):
-	list_display = ('name', 'email', 'address', 'order', 'public', 'main')
-	search_fields = ('name', 'sites', 'email', 'address', 'order', 'public', 'main')
-	list_editable = ['order', 'public', 'main']
-	list_filter = ['public', 'main']
-
-admin.site.register(Office, OfficeAdmin)

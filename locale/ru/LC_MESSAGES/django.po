@@ -277,10 +277,6 @@ msgstr "Изображение"
 msgid "Background"
 msgstr "Фоновое изображение"
 
-#: models.py:216 models.py:448
-msgid "Offices"
-msgstr "Офисы"
-
 #: models.py:248 models.py:254 models.py:276 models.py:327 models.py:453
 #: models.py:508 models.py:578
 msgid "Block"
@@ -458,10 +454,6 @@ msgstr "Увеличения"
 #: models.py:424 models.py:462 models.py:592
 msgid "Main"
 msgstr "На главной"
-
-#: models.py:447
-msgid "Office"
-msgstr "Офис"
 
 #: models.py:472 models.py:481 models.py:537
 msgid "Organization"

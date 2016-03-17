@@ -237,10 +237,6 @@ msgstr ""
 msgid "Sort"
 msgstr ""
 
-#: models.py:203 models.py:466
-msgid "Offices"
-msgstr ""
-
 #: models.py:238 models.py:244 models.py:265 models.py:315
 msgid "Block"
 msgstr ""
@@ -420,10 +416,6 @@ msgstr ""
 
 #: models.py:439
 msgid "Main"
-msgstr ""
-
-#: models.py:465
-msgid "Office"
 msgstr ""
 
 #: templates/email/tariff_order.html:9

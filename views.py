@@ -22,7 +22,6 @@ from django.core.mail import EmailMultiAlternatives
 
 from .forms import TariffOrderForm
 
-from .models import Office
 from .models import SiteConfig
 from .models import Tariff
 from .models import FormConfig
@@ -68,7 +67,6 @@ def request(request, id):
 				try:
 					email_context = {}
 					email_context['title'] = config.title
-					email_context['offices'] = Office.objects.filter(public=True, sites__in=[request.site])
 					email_context['object'] = new_request
 					admin_content = render_to_string('email/result.html', email_context, context_instance=RequestContext(request))
 					sendmsg = EmailMultiAlternatives(email_context['title'], admin_content, site_config.email, [site_config.email])
@@ -96,7 +94,6 @@ def tariff(request, id):
 
 	tariff = Tariff.objects.get(id=id)
 	site_config = SiteConfig.objects.get(site=request.site)
-	context['offices'] = Office.objects.filter(public=True, sites__in=[request.site])
 	context['form'] = TariffOrderForm(request.POST or None)
 	context['tariff'] = tariff
 	context['additions'] = tariff.public_additions()
