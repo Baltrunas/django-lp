@@ -11,7 +11,7 @@ class FAQInline(admin.StackedInline):
 	model = FAQ
 	extra = 0
 
-class BlockAdmin(admin.ModelAdmin): 
+class BlockAdmin(admin.ModelAdmin):
 	list_display = ['title', 'slug', 'order', 'public']
 	search_fields = ['title', 'slug', 'order', 'public']
 	list_filter = ['public', 'pages']
@@ -21,7 +21,7 @@ class BlockAdmin(admin.ModelAdmin):
 admin.site.register(Block, BlockAdmin)
 
 
-class SubBlockAdmin(admin.ModelAdmin): 
+class SubBlockAdmin(admin.ModelAdmin):
 	list_display = ['title', 'block', 'sub_title', 'order', 'public']
 	search_fields = ['title', 'block', 'sub_title', 'order', 'public']
 	list_filter = ['public']
@@ -30,7 +30,7 @@ class SubBlockAdmin(admin.ModelAdmin):
 admin.site.register(SubBlock, SubBlockAdmin)
 
 
-class FAQAdmin(admin.ModelAdmin): 
+class FAQAdmin(admin.ModelAdmin):
 	list_display = ['problem_title', 'solutions_title', 'order', 'public']
 	search_fields = ['problem_title', 'solutions_title', 'order', 'public']
 	list_filter = ['public']

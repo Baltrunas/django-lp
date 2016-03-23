@@ -54,8 +54,8 @@ class SubBlock(models.Model):
 
 	class Meta:
 		ordering = ['block', 'order']
-		verbose_name = _('Sub Block')
-		verbose_name_plural = _('Sub Blocks')
+		verbose_name = _('Subblock')
+		verbose_name_plural = _('Subblocks')
 
 
 class FAQ(models.Model):
