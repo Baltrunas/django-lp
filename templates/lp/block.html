@@ -23,13 +23,13 @@
 			{% endif %}
 
 			{% if block_item.text %}
-			<div class='b-block__description'>
+			<div class='b-block__text'>
 				{% render block_item.text %}
 			</div>
 			{% endif %}
 		</div>
 		{% if block_item.image %}
-			<img class='b-block__image' src='{{ block_item.image.url }}' alt='{{ block_item.title }}'>
+			<img class='b-block__img' src='{{ block_item.image.url }}' alt='{{ block_item.title }}'>
 		{% endif %}
 	</div>
 
