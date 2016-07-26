@@ -1,4 +1,4 @@
-#: models.py:8 models.py:41
+#: models.py:8 models.py:40
 msgid "Title"
 msgstr ""
 
@@ -10,7 +10,7 @@ msgstr ""
 msgid "Slug"
 msgstr ""
 
-#: models.py:11 models.py:43
+#: models.py:11 models.py:42
 msgid "Sub Title"
 msgstr ""
 
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: models.py:13 models.py:45
+#: models.py:13 models.py:44
 msgid "Image"
 msgstr ""
 
@@ -30,74 +30,70 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: models.py:19 models.py:47 models.py:73
+#: models.py:19 models.py:46 models.py:72
 msgid "Sort ordering"
 msgstr ""
 
-#: models.py:20
-msgid "Offices"
-msgstr ""
-
-#: models.py:23 models.py:49 models.py:75
+#: models.py:22 models.py:48 models.py:74
 msgid "Public"
 msgstr ""
 
-#: models.py:24 models.py:50 models.py:76
+#: models.py:23 models.py:49 models.py:75
 msgid "Created At"
 msgstr ""
 
-#: models.py:25 models.py:51 models.py:77
+#: models.py:24 models.py:50 models.py:76
 msgid "Updated At"
 msgstr ""
 
-#: models.py:36 models.py:42 models.py:63
+#: models.py:35 models.py:41 models.py:62
 msgid "Block"
 msgstr ""
 
-#: models.py:37
+#: models.py:36
 msgid "Blocks"
 msgstr ""
 
-#: models.py:44
+#: models.py:43
 msgid "Description"
 msgstr ""
 
-#: models.py:58
+#: models.py:57
 msgid "Sub Block"
 msgstr ""
 
-#: models.py:59
+#: models.py:58
 msgid "Sub Blocks"
 msgstr ""
 
-#: models.py:65
+#: models.py:64
 msgid "Problem Title"
 msgstr ""
 
-#: models.py:66
+#: models.py:65
 msgid "Problem Description"
 msgstr ""
 
-#: models.py:67
+#: models.py:66
 msgid "Problem Image"
 msgstr ""
 
-#: models.py:69
+#: models.py:68
 msgid "Solutions Title"
 msgstr ""
 
-#: models.py:70
+#: models.py:69
 msgid "Solutions Description"
 msgstr ""
 
-#: models.py:71
+#: models.py:70
 msgid "Solutions Image"
 msgstr ""
 
-#: models.py:84
+#: models.py:83
 msgid "FAQ"
 msgstr ""
 
-#: models.py:85
+#: models.py:84
 msgid "FAQs"
 msgstr ""
