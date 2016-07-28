@@ -10,28 +10,27 @@
 	data-id='{{ block_item.id }}'
 >
 	<div class='b-block__info'>
-			{% if not block_item.hide_title %}
-				{% if forloop.first %}
-					<h1 class='b-block__title'>{{ block_item.title|safe }}</h1>
-				{% else %}
-					<h2 class='b-block__title'>{{ block_item.title|safe }}</h2>
-				{% endif %}
+		{% if not block_item.hide_title %}
+			{% if forloop.first %}
+				<h1 class='b-block__title'>{{ block_item.title|safe }}</h1>
+			{% else %}
+				<h2 class='b-block__title'>{{ block_item.title|safe }}</h2>
 			{% endif %}
+		{% endif %}
 
-			{% if block_item.sub_title %}
-				<h3 class='b-block__subtitle'>{{ block_item.sub_title|safe }}</h3>
-			{% endif %}
+		{% if block_item.sub_title %}
+			<h3 class='b-block__subtitle'>{{ block_item.sub_title|safe }}</h3>
+		{% endif %}
 
-			{% if block_item.text %}
-			<div class='b-block__text'>
-				{% render block_item.text %}
-			</div>
-			{% endif %}
+		{% if block_item.text %}
+		<div class='b-block__text'>
+			{% render block_item.text %}
 		</div>
-		{% if block_item.image %}
-			<img class='b-block__img' src='{{ block_item.image.url }}' alt='{{ block_item.title }}'>
 		{% endif %}
 	</div>
+	{% if block_item.image %}
+		<img class='b-block__img' src='{{ block_item.image.url }}' alt='{{ block_item.title }}'>
+	{% endif %}
 
 	<!-- subblocks -->
 	{% if block_item.public_subblocks.count %}
