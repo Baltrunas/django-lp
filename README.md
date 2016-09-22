@@ -14,3 +14,5 @@ oh-ho-ho form configs partitialy migrated to django-contacts2
 
 
 need to optimize translations
+
+2016-09-22 delete FAQ its simular as block, may be subblock will be removed to!

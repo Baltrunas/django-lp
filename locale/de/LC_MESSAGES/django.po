@@ -85,35 +85,3 @@ msgstr ""
 #: models.py:58
 msgid "Subblocks"
 msgstr ""
-
-#: models.py:64
-msgid "Problem Title"
-msgstr ""
-
-#: models.py:65
-msgid "Problem Description"
-msgstr ""
-
-#: models.py:66
-msgid "Problem Image"
-msgstr ""
-
-#: models.py:68
-msgid "Solutions Title"
-msgstr ""
-
-#: models.py:69
-msgid "Solutions Description"
-msgstr ""
-
-#: models.py:70
-msgid "Solutions Image"
-msgstr ""
-
-#: models.py:83
-msgid "FAQ"
-msgstr ""
-
-#: models.py:84
-msgid "FAQs"
-msgstr ""

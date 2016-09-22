@@ -88,35 +88,3 @@ msgstr "Подблок"
 #: models.py:58
 msgid "Sub Blocks"
 msgstr "Подблоки"
-
-#: models.py:64
-msgid "Problem Title"
-msgstr "Заголовок проблемы"
-
-#: models.py:65
-msgid "Problem Description"
-msgstr "Описание проблемы"
-
-#: models.py:66
-msgid "Problem Image"
-msgstr "Изображение проблемы"
-
-#: models.py:68
-msgid "Solutions Title"
-msgstr "Заголовок решения"
-
-#: models.py:69
-msgid "Solutions Description"
-msgstr "Описание решения"
-
-#: models.py:70
-msgid "Solutions Image"
-msgstr "Изображение решения"
-
-#: models.py:83
-msgid "FAQ"
-msgstr "Вопрос и ответ"
-
-#: models.py:84
-msgid "FAQs"
-msgstr "Вопросы и ответы"

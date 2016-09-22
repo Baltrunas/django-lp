@@ -60,29 +60,3 @@ class SubBlock(models.Model):
 		ordering = ['block', 'order']
 		verbose_name = _('Subblock')
 		verbose_name_plural = _('Subblocks')
-
-
-class FAQ(models.Model):
-	block = models.ForeignKey(Block, verbose_name=_('Block'), related_name='faqs')
-
-	problem_title = models.CharField(verbose_name=_('Problem Title'), max_length=256)
-	problem_description = models.TextField(verbose_name=_('Problem Description'), blank=True, null=True)
-	problem_image = models.FileField(verbose_name=_('Problem Image'), upload_to=upload_to, blank=True, null=True)
-
-	solutions_title = models.CharField(verbose_name=_('Solutions Title'), max_length=256)
-	solutions_description = models.TextField(verbose_name=_('Solutions Description'), blank=True, null=True)
-	solutions_image = models.FileField(verbose_name=_('Solutions Image'), upload_to=upload_to, blank=True, null=True)
-
-	order = models.PositiveSmallIntegerField(verbose_name=_('Sort ordering'), default=500)
-
-	public = models.BooleanField(verbose_name=_('Public'), default=True)
-	created_at = models.DateTimeField(verbose_name=_('Created At'), auto_now_add=True)
-	updated_at = models.DateTimeField(verbose_name=_('Updated At'), auto_now=True)
-
-	def __unicode__(self):
-		return self.problem_title
-
-	class Meta:
-		ordering = ['order']
-		verbose_name = _('FAQ')
-		verbose_name_plural = _('FAQs')
